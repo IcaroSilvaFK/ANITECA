@@ -4,7 +4,7 @@ import Head from "next/head";
 import { api } from "../../services/axios";
 import { Layout } from "../../layout";
 
-export default function AnimePage() {
+export default function _animePage() {
 	return (
 		<>
 			<Head></Head>
