@@ -4,7 +4,8 @@ import Link from "next/link";
 
 import { SiDtube } from "react-icons/si";
 import { BsDiscord } from "react-icons/bs";
-import { MdOutlineAlternateEmail } from "react-icons/md";
+import { MdAutoGraph } from "react-icons/md";
+
 import { SiMyanimelist } from "react-icons/si";
 
 import { useModalDiscord } from "../../context/modalDiscordContext";
@@ -35,10 +36,10 @@ export function Header() {
 						</Link>
 					</li>
 					<li>
-						<Link href="">
+						<Link href="/Genres">
 							<a>
 								Gêneros
-								<MdOutlineAlternateEmail size={23} color="#3961A9" />
+								<MdAutoGraph size={23} color="#E53E3E" />
 							</a>
 						</Link>
 					</li>
