@@ -13,13 +13,17 @@ export function Header() {
   return (
     <Container>
       <div>
-        <SiDtube size={30} color="#E53E3E" />
-        <Title>ANITECA</Title>
+        <Link href="/">
+          <a>
+            <SiDtube size={30} color="#E53E3E" />
+            <Title>ANITECA</Title>
+          </a>
+        </Link>
       </div>
       <nav>
         <ul>
           <li>
-            <Link href="">
+            <Link href="/Animes">
               <a>
                 Animes
                 <SiMyanimelist size={23} color="#E53E3E" />

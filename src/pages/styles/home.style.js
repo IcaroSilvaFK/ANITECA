@@ -25,6 +25,7 @@ export const Container = styled.section`
 export const ContainerForm = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 10px;
 `;
 

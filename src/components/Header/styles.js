@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.header`
+  width: 100%;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -10,9 +12,11 @@ export const Container = styled.header`
   border-bottom: 1px solid #eee;
 
   div {
-    display: flex;
-    align-items: center;
-    gap: 5px;
+    a {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
   }
   nav {
     ul {
