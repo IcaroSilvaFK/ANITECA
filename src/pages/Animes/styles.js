@@ -20,3 +20,11 @@ export const Title = styled.div`
 		font-family: var(--fontMont);
 	}
 `;
+
+export const ContainerMain = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1000px;
+	margin: 30px auto;
+`;
