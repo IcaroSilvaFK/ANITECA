@@ -1,19 +1,36 @@
 import React from "react";
-
 import Link from "next/link";
+import { useForm } from "react-hook-form";
 
 import { SiDtube } from "react-icons/si";
 import { BsDiscord } from "react-icons/bs";
 import { MdAutoGraph } from "react-icons/md";
-
+import { FiSearch } from "react-icons/fi";
 import { SiMyanimelist } from "react-icons/si";
 
 import { useModalDiscord } from "../../context/modalDiscordContext";
 
-import { Container, Title } from "./styles";
+import { Container, Title, Form, Row } from "./styles";
+
+import { api } from "../../services/axios";
 
 export function Header() {
+	const { register, handleSubmit, reset } = useForm();
 	const { handleOpenModal } = useModalDiscord();
+
+	async function getAnimes(anime) {
+		const data = await api.get("anime", {
+			params: {
+				letter: anime,
+			},
+		});
+		console.log(data);
+	}
+
+	function onSubmit(data) {
+		getAnimes(data.search);
+		reset();
+	}
 
 	return (
 		<Container>
@@ -24,6 +41,18 @@ export function Header() {
 						<Title>ANITECA</Title>
 					</a>
 				</Link>
+				<Form onSubmit={handleSubmit(onSubmit)}>
+					<Row>
+						<input
+							type="text"
+							placeholder="Pesquise aqui seu anime favorito"
+							{...register("search")}
+						/>
+						<button type="submit">
+							<FiSearch size={20} />
+						</button>
+					</Row>
+				</Form>
 			</div>
 			<nav>
 				<ul>
