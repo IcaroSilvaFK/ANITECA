@@ -1,6 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
+import { useRouter } from "next/router";
+import { toast } from "react-toastify";
 
 import { SiDtube } from "react-icons/si";
 import { BsDiscord } from "react-icons/bs";
@@ -9,14 +11,14 @@ import { FiSearch } from "react-icons/fi";
 import { SiMyanimelist } from "react-icons/si";
 
 import { useModalDiscord } from "../../context/modalDiscordContext";
+import { api } from "../../services/axios";
 
 import { Container, Title, Form, Row } from "./styles";
-
-import { api } from "../../services/axios";
 
 export function Header() {
 	const { register, handleSubmit, reset } = useForm();
 	const { handleOpenModal } = useModalDiscord();
+	const router = useRouter();
 
 	async function getAnimes(anime) {
 		const data = await api.get("anime", {
@@ -24,7 +26,17 @@ export function Header() {
 				letter: anime,
 			},
 		});
-		console.log(data);
+		if (data.status === 200 && data.data.data.length > 0) {
+			localStorage.setItem("@searchAnimes", JSON.stringify(data.data.data));
+
+			router.push("/Search");
+
+			return;
+		}
+		toast.error(`Infelizmente não conseguimos encontrar ${anime} 🥲`, {
+			draggable: true,
+			theme: "dark",
+		});
 	}
 
 	function onSubmit(data) {
@@ -60,7 +72,7 @@ export function Header() {
 						<Link href="/Animes">
 							<a>
 								Animes
-								<SiMyanimelist size={23} color="#E53E3E" />
+								<SiMyanimelist size={24} color="#E53E3E" />
 							</a>
 						</Link>
 					</li>
@@ -68,7 +80,7 @@ export function Header() {
 						<Link href="/Genres">
 							<a>
 								Gêneros
-								<MdAutoGraph size={23} color="#E53E3E" />
+								<MdAutoGraph size={24} color="#E53E3E" />
 							</a>
 						</Link>
 					</li>
@@ -76,7 +88,7 @@ export function Header() {
 						<button onClick={handleOpenModal}>
 							<a>
 								Discord
-								<BsDiscord size={23} color="#6F85D5" />
+								<BsDiscord size={24} color="#6F85D5" />
 							</a>
 						</button>
 					</li>

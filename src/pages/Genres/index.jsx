@@ -12,7 +12,7 @@ export default function _genresPage({ genres }) {
 	const genresNames = genres.data.map((element) => element.name);
 	const removeEquals = new Set(genresNames);
 	const arrayGenresFinily = Array.from(removeEquals);
-	console.log(arrayGenresFinily.length);
+
 	return (
 		<>
 			<Head></Head>
@@ -27,7 +27,9 @@ export default function _genresPage({ genres }) {
 					{arrayGenresFinily.map((element) => (
 						<Card key={element}>
 							<Link href={`/AnimesGenres/${element}`}>
-								<strong>{element}</strong>
+								<a>
+									<strong>{element}</strong>
+								</a>
 							</Link>
 						</Card>
 					))}
@@ -37,7 +39,7 @@ export default function _genresPage({ genres }) {
 	);
 }
 
-export async function getStaticProps({ ctx }) {
+export async function getStaticProps(ctx) {
 	const response = await api.get("genres/anime", {
 		params: {
 			filter: "genres",

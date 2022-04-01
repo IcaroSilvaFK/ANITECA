@@ -20,6 +20,7 @@ export default function _animePage() {
 			const response = await api.get("top/anime", {
 				params: {
 					page,
+					limit: 9,
 				},
 			});
 			if (response.status === 200) {

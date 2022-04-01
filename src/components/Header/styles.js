@@ -49,7 +49,7 @@ export const Row = styled.div`
 	background-color: #4a5568;
 	height: 30px;
 	border-radius: 10px;
-	padding: 5px 10px;
+	padding: 16px 8px;
 	button {
 		display: flex;
 		align-items: center;
@@ -62,9 +62,9 @@ export const Row = styled.div`
 	}
 	input {
 		background-color: transparent;
-		width: 250px;
+		width: 300px;
 		color: #ffff;
-
+		font-size: 16px;
 		&::placeholder {
 			color: #a0aec0;
 		}
