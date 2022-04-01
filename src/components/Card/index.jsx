@@ -10,11 +10,11 @@ import { AiFillStar } from "react-icons/ai";
 
 import { FaPlay } from "react-icons/fa";
 
-export function Card({ image, title, score }) {
+export function Card({ image, title, score, enjoyAnime }) {
 	return (
 		<Container imageBackground={image}>
 			<ContainerAbsolute>
-				<ContainerPalyer>
+				<ContainerPalyer onClick={enjoyAnime}>
 					<FaPlay />
 				</ContainerPalyer>
 				<Box>

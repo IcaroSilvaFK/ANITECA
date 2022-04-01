@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Head from "next/head";
+import { useRouter } from "next/router";
 
-import { BiCommentCheck, BiRightArrow } from "react-icons/bi";
-import { IoArrowRedo, IoMdArrowDropleft } from "react-icons/io";
+import { BiCommentCheck } from "react-icons/bi";
 import { TiArrowForward, TiArrowBack } from "react-icons/ti";
 import { api } from "../../services/axios";
 import { Layout } from "../../layout";
@@ -13,6 +13,8 @@ import { Container, Title, ContainerMain } from "./styles";
 export default function _animePage() {
 	const [page, setPage] = useState(1);
 	const [animes, setAnimes] = useState([]);
+	const router = useRouter();
+
 	useEffect(() => {
 		(async () => {
 			const response = await api.get("top/anime", {
@@ -26,8 +28,13 @@ export default function _animePage() {
 		})();
 	}, [page]);
 
-	console.log(animes);
-	console.log(page);
+	function handleSearchAnime(id) {
+		router.push(`/Anime/${id}`);
+	}
+
+	function handleRevertPage() {
+		if (page > 1) setPage(page - 1);
+	}
 	return (
 		<>
 			<Head></Head>
@@ -40,7 +47,7 @@ export default function _animePage() {
 						</h1>
 						<div>
 							{page > 1 ? (
-								<button>
+								<button onClick={handleRevertPage}>
 									<TiArrowBack size={25} />
 								</button>
 							) : (
@@ -57,7 +64,8 @@ export default function _animePage() {
 								title={element.title}
 								score={element.score}
 								image={element.images.webp.image_url}
-								key={element.id}
+								key={element.mal_id}
+								enjoyAnime={() => handleSearchAnime(element.mal_id)}
 							/>
 						))}
 					</ContainerMain>
@@ -66,8 +74,3 @@ export default function _animePage() {
 		</>
 	);
 }
-/**
- * image
- * title
- * score
- * */
