@@ -7,6 +7,11 @@ export const Container = styled.div`
 	height: 350px;
 	position: relative;
 	border-radius: 5px;
+
+	&:hover {
+		transform: scale(1.1);
+		cursor: pointer;
+	}
 `;
 
 export const ContainerAbsolute = styled.div`
@@ -22,15 +27,18 @@ export const ContainerAbsolute = styled.div`
 		rgba(0, 0, 0, 0.1),
 		rgba(0, 0, 0, 0)
 	);
-	backdrop-filter: blur(2px);
+	backdrop-filter: blur(5px);
 
 	display: flex;
 	align-items: center;
 
 	padding: 0 10px;
+
+	height: 50px;
 `;
 
 export const ContainerPalyer = styled.div`
+	flex-shrink: 1;
 	width: 40px;
 	height: 40px;
 	background-color: rgba(0, 0, 0, 0.5);
@@ -51,6 +59,12 @@ export const Box = styled.div`
 		align-items: center;
 		justify-content: center;
 		gap: 2px;
+		strong {
+			overflow: hidden;
+			font-size: 14px;
+			height: 20px;
+			width: 80px;
+		}
 	}
 `;
 
