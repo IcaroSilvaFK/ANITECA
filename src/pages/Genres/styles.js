@@ -41,4 +41,12 @@ export const Card = styled.li`
 		background-color: #c53030;
 		font-size: 18px;
 	}
+
+	a {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
 `;

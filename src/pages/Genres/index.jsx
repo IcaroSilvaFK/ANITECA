@@ -47,6 +47,8 @@ export async function getStaticProps(ctx) {
 		},
 	});
 
+	console.log();
+
 	if (response.status === 200) {
 		const genres = response.data;
 		return {

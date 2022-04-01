@@ -19,7 +19,7 @@ export async function getServerSideProps(ctx) {
 		params: { genre },
 	} = ctx;
 	console.log(genre);
-	const response = await api.get("/anime", {
+	const response = await api.get("anime", {
 		params: {
 			genres: genre,
 		},
@@ -27,10 +27,10 @@ export async function getServerSideProps(ctx) {
 	console.log(response);
 
 	if (response.status === 200) {
-		// const { data } = response.data;
+		const { data } = response.data;
 
 		return {
-			props: {},
+			props: { data },
 		};
 	}
 	return {
