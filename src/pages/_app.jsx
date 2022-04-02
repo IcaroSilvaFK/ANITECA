@@ -1,19 +1,25 @@
+import { SessionProvider } from "next-auth/react";
+import { ApolloProvider } from "@apollo/client";
 import { ToastContainer } from "react-toastify";
+
+import { client } from "../services/apolloclient";
+import { Seo } from "../SEO";
 
 import { DiscordModalContextProvider } from "../context/modalDiscordContext";
 import { GlobalStyle } from "../styles/global";
 import "react-toastify/dist/ReactToastify.css";
-import { DiscordModal } from "../Discord";
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps: { session, ...pageProps } }) {
 	return (
 		<>
-			<DiscordModalContextProvider>
-				<GlobalStyle />
-				<Component {...pageProps} />
-				<ToastContainer />
-				<DiscordModal />
-			</DiscordModalContextProvider>
+			<Seo />
+			<ApolloProvider client={client}>
+				<SessionProvider session={session}>
+					<GlobalStyle />
+					<Component {...pageProps} />
+					<ToastContainer />
+				</SessionProvider>
+			</ApolloProvider>
 		</>
 	);
 }

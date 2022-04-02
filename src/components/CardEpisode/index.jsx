@@ -1,6 +1,6 @@
 import { FaPlay } from "react-icons/fa";
 
-import { Container, Number, Button, Box } from "./styles";
+import { Container, Number, Box } from "./styles";
 
 export function CardEpisode({ title, mal_id, palyVideo }) {
 	return (

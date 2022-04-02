@@ -37,7 +37,7 @@ export const Card = styled.li`
 	transition: all linear 0.2s;
 
 	&:hover {
-		transform: scale(1.1) rotate3d(1, 0, 1, 5deg);
+		transform: scale(1.15);
 		background-color: #c53030;
 		font-size: 18px;
 	}
