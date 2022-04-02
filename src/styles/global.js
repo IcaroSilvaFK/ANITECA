@@ -7,14 +7,15 @@ export const GlobalStyle = createGlobalStyle`
     --fontRock: 'Rock 3D', cursive;
 		--black:#000000;
 		--white:#FFFFFF;
-
+		
 		//gray
 
 		--gray900:#171923;
-
+		--gray400:#a0aec0;
 		//red
 		--red600:#E53E3E;
 
+		--green400:#48BB78;
 
 	}
 
@@ -52,4 +53,5 @@ export const GlobalStyle = createGlobalStyle`
 		background-color: transparent;
 		color: inherit;
 	}
+
 `;

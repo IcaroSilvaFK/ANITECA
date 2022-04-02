@@ -7,17 +7,17 @@ export function Navigation() {
 		<Container>
 			<ul>
 				<li>
-					<Link href="">
+					<Link href="/">
 						<a>Anime</a>
 					</Link>
 				</li>
 				<li>
-					<Link href="">
+					<Link href="/">
 						<a>Gêneros</a>
 					</Link>
 				</li>
 				<li>
-					<Link href="">
+					<Link href="/">
 						<a>Discord</a>
 					</Link>
 				</li>

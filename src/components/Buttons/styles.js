@@ -10,7 +10,8 @@ export const ButtonLog = styled.button`
 
 	background-color: var(--red600);
 
-	padding: 8px 15px;
+	width: 80px;
+	height: 30px;
 	border-radius: 5px;
 	font-size: 16px;
 
@@ -44,7 +45,7 @@ export const ButtonLogged = styled.button`
 		position: absolute;
 
 		left: -28px;
-		border: 1px solid #fff;
+		border: 2px solid #fff;
 	}
 
 	transform: scale 0.3s;
@@ -56,4 +57,58 @@ export const ButtonLogged = styled.button`
 
 export const CloseIcon = styled(MdClose)`
 	color: "#fff";
+`;
+
+export const SearchButton = styled.button`
+	background-color: ${(props) =>
+		props.color ? props.color : "var(--green400)"};
+
+	width: 80px;
+	border-radius: 5px;
+
+	font-size: 16px;
+
+	transition: transform 0.3s;
+
+	&:hover {
+		transform: scale(1.1);
+	}
+`;
+
+export const ButButton = styled.button`
+	width: 100px;
+	height: 40px;
+
+	background-color: var(--red600);
+
+	font-size: 18px;
+
+	border-radius: 5px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	transition: filter 0.3s;
+
+	&:hover {
+		filter: brightness(0.8);
+	}
+`;
+
+export const SendButton = styled.button`
+	width: 80px;
+	background-color: var(--red600);
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	border-radius: 5px;
+
+	transition: filter 0.3s;
+
+	&:hover {
+		filter: brightness(0.8);
+	}
 `;

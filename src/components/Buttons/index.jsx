@@ -1,6 +1,16 @@
 import { useSession, signIn, signOut } from "next-auth/react";
 
-import { ButtonLog, ButtonLogged, CloseIcon } from "./styles";
+import { HiOutlinePlusSm } from "react-icons/hi";
+import { IoIosSend } from "react-icons/io";
+
+import {
+	ButtonLog,
+	ButtonLogged,
+	CloseIcon,
+	SearchButton,
+	ButButton,
+	SendButton,
+} from "./styles";
 
 export function ButtonLogin() {
 	const { data: session } = useSession();
@@ -11,7 +21,7 @@ export function ButtonLogin() {
 		return (
 			<ButtonLogged onClick={() => signOut("google")}>
 				<img src={session.user.image} alt={session.user.name} />
-				<span>{session.user.name}</span>
+				<span>{session.user.name.split(" ")[0]}</span>
 				<CloseIcon size={20} color="#fff" />
 			</ButtonLogged>
 		);
@@ -20,5 +30,29 @@ export function ButtonLogin() {
 		<ButtonLog onClick={() => signIn("google")}>
 			<span>login</span>
 		</ButtonLog>
+	);
+}
+
+export function ButtonSearch({ color }) {
+	return (
+		<SearchButton color={color} type="submit">
+			buscar
+		</SearchButton>
+	);
+}
+
+export function ButtonBut() {
+	return (
+		<ButButton>
+			Mais <HiOutlinePlusSm size={20} />
+		</ButButton>
+	);
+}
+
+export function ButtonSend() {
+	return (
+		<SendButton type="submit">
+			Enviar <IoIosSend size={20} />
+		</SendButton>
 	);
 }

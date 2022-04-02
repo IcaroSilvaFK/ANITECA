@@ -23,43 +23,93 @@ export const Container = styled.section`
 	}
 `;
 
-export const ContainerForm = styled.div`
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 10px;
+export const Box = styled.div`
+	margin-top: 30px;
+
+	div {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 20px;
+		h1 {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			font-size: 30px;
+		}
+	}
 `;
 
 export const Form = styled.form`
 	display: flex;
+	justify-content: center;
+
 	gap: 10px;
+
+	margin-top: 40px;
+`;
+
+export const Row = styled.div`
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	background-color: var(--white);
+
+	padding: 8px;
+
+	border-radius: 5px;
+
+	input {
+		background-color: transparent;
+
+		width: 350px;
+		height: 30px;
+
+		font-size: 18px;
+	}
+`;
+
+export const SectionCards = styled.section`
+	display: flex;
+	flex-direction: column;
+	margin-top: 50px;
+	gap: 20px;
 	div {
-		display: flex;
-		align-items: center;
-
-		gap: 10px;
-
-		background-color: #fff;
-		width: 400px;
-		height: 40px;
-
-		border-radius: 5px;
-		padding: 5px;
-
-		input {
-			flex-grow: 1;
-			font-size: 18px;
-			color: #171923;
+		h2 {
+			font-size: 24px;
 		}
 	}
-	button {
+	.containerBut {
 		display: flex;
-		align-items: center;
-		gap: 5px;
+		justify-content: right;
+	}
+`;
 
-		color: #fff;
-		background-color: #48bb78;
-		padding: 5px;
+export const CardsSection = styled.div`
+	display: flex;
+	gap: 20px;
+	img {
+		width: 300px;
+		height: 370px;
 		border-radius: 5px;
+	}
+`;
+
+export const NewsSection = styled.div`
+	padding: 10px 0;
+
+	div {
+		text-align: center;
+
+		h1 {
+			font-size: 45px;
+			span {
+				color: var(--red600);
+			}
+		}
+		p {
+			font-size: 22px;
+			width: 600px;
+		}
 	}
 `;

@@ -9,7 +9,7 @@ export const Container = styled.header`
 
 	padding: 20px 80px;
 
-	border-bottom: 1px solid #fff;
+	/* border-bottom: 1px solid #fff; */
 `;
 
 export const Box = styled.div`
