@@ -7,6 +7,12 @@ export const ButtonLog = styled.button`
 	padding: 8px 15px;
 	border-radius: 5px;
 	font-size: 16px;
+
+	transform: scale 0.3s;
+
+	&:hover {
+		transform: scale(1.1);
+	}
 `;
 
 export const ButtonLogged = styled.button`
@@ -19,7 +25,10 @@ export const ButtonLogged = styled.button`
 
 	position: relative;
 
-	padding: 8px 4px 14px 8px;
+	padding: 4px 4px 4px 14px;
+
+	border-bottom-right-radius: 10px;
+	border-top-right-radius: 10px;
 
 	img {
 		width: 40px;
@@ -27,6 +36,12 @@ export const ButtonLogged = styled.button`
 		position: absolute;
 
 		left: -28px;
+	}
+
+	transform: scale 0.3s;
+
+	&:hover {
+		transform: scale(1.1);
 	}
 `;
 

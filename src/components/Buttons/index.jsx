@@ -12,7 +12,7 @@ export function ButtonLogin() {
 			<ButtonLogged onClick={() => signOut("google")}>
 				<img src={session.user.image} alt={session.user.name} />
 				<strong>{session.user.name}</strong>
-				<CloseIcon size={20} />
+				<CloseIcon size={20} color="#fff" />
 			</ButtonLogged>
 		);
 	}
