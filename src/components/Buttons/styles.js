@@ -73,6 +73,12 @@ export const SearchButton = styled.button`
 	&:hover {
 		transform: scale(1.1);
 	}
+	@media (max-width: 500px) {
+		padding: 8px 16px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
 `;
 
 export const ButButton = styled.button`
@@ -111,4 +117,19 @@ export const SendButton = styled.button`
 	&:hover {
 		filter: brightness(0.8);
 	}
+
+	@media (max-width: 500px) {
+		height: 40px;
+		width: 100px;
+
+		font-size: 18px;
+		display: flex;
+		align-items: center;
+	}
+`;
+
+export const ForgetButton = styled.button`
+	display: flex;
+	align-items: center;
+	justify-content: center;
 `;

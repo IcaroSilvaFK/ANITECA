@@ -4,8 +4,9 @@ import { ToastContainer } from "react-toastify";
 
 import { client } from "../services/apolloclient";
 import { Seo } from "../SEO";
+import { MenuMobileContextProvider } from "../context/menuMobile";
+import { NavigationModal } from "../components/mobile/NavigationMobile";
 
-import { DiscordModalContextProvider } from "../context/modalDiscordContext";
 import { GlobalStyle } from "../styles/global";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -15,9 +16,12 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
 			<Seo />
 			<ApolloProvider client={client}>
 				<SessionProvider session={session}>
-					<GlobalStyle />
-					<Component {...pageProps} />
-					<ToastContainer />
+					<MenuMobileContextProvider>
+						<GlobalStyle />
+						<Component {...pageProps} />
+						<ToastContainer />
+						<NavigationModal />
+					</MenuMobileContextProvider>
 				</SessionProvider>
 			</ApolloProvider>
 		</>

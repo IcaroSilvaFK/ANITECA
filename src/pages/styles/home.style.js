@@ -26,7 +26,7 @@ export const Container = styled.section`
 export const Box = styled.div`
 	margin-top: 30px;
 
-	div {
+	.box__containerTitle {
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -38,6 +38,20 @@ export const Box = styled.div`
 			font-size: 30px;
 		}
 	}
+
+	@media (max-width: 500px) {
+		display: flex;
+		flex-direction: column;
+
+		.box__containerTitle {
+			display: flex;
+			flex-direction: column-reverse;
+			align-items: center;
+			h1 {
+				font-size: 22px;
+			}
+		}
+	}
 `;
 
 export const Form = styled.form`
@@ -47,6 +61,11 @@ export const Form = styled.form`
 	gap: 10px;
 
 	margin-top: 40px;
+	@media (max-width: 500px) {
+		flex-direction: column;
+		align-items: center;
+		gap: 20px;
+	}
 `;
 
 export const Row = styled.div`
@@ -67,6 +86,17 @@ export const Row = styled.div`
 
 		font-size: 18px;
 	}
+	@media (max-width: 500px) {
+		display: flex;
+		align-items: center;
+		svg {
+			width: 20px;
+			height: 20px;
+		}
+		input {
+			width: 250px;
+		}
+	}
 `;
 
 export const SectionCards = styled.section`
@@ -83,6 +113,25 @@ export const SectionCards = styled.section`
 		display: flex;
 		justify-content: right;
 	}
+
+	@media (max-width: 500px) {
+		display: flex;
+		flex-direction: column;
+
+		width: 100%;
+
+		div {
+			h2 {
+				font-size: 24px;
+				text-align: center;
+			}
+		}
+		.containerBut {
+			display: flex;
+			justify-content: right;
+			padding-right: 20px;
+		}
+	}
 `;
 
 export const CardsSection = styled.div`
@@ -93,12 +142,21 @@ export const CardsSection = styled.div`
 		height: 370px;
 		border-radius: 5px;
 	}
+
+	@media (max-width: 500px) {
+		overflow-x: auto;
+		padding: 0 20px;
+		img {
+			width: 250px;
+			border-radius: 5px;
+		}
+	}
 `;
 
 export const NewsSection = styled.div`
 	padding: 10px 0;
 
-	div {
+	.newsSection__title {
 		text-align: center;
 
 		h1 {
@@ -110,6 +168,22 @@ export const NewsSection = styled.div`
 		p {
 			font-size: 22px;
 			width: 600px;
+		}
+	}
+
+	@media (max-width: 500px) {
+		.newsSection__title {
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+			h1 {
+				font-size: 35px;
+			}
+
+			p {
+				width: 340px;
+				font-size: 16px;
+			}
 		}
 	}
 `;

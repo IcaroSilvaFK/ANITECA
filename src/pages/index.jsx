@@ -7,6 +7,7 @@ import { MdOutlineAlternateEmail } from "react-icons/md";
 import { Header } from "../components/Header";
 import { Input } from "../components/Input";
 import { ButtonSearch, ButtonBut, ButtonSend } from "../components/Buttons";
+import { Footer } from "../components/Footer";
 
 import {
 	Container,
@@ -41,7 +42,7 @@ export default function _homePage() {
 		<Container>
 			<Header />
 			<Box>
-				<div>
+				<div className="box__containerTitle">
 					<h1>
 						<span>Assita Animes</span>
 						<span>Gratuitamente sem anúncio!</span>
@@ -49,8 +50,8 @@ export default function _homePage() {
 					<div>
 						<Image
 							src="/assets/Logo-main.png"
-							width={360}
-							height={360}
+							width={300}
+							height={300}
 							alt="imagem Anime"
 						/>
 					</div>
@@ -58,7 +59,7 @@ export default function _homePage() {
 				<FormProvider {...props}>
 					<Form onSubmit={props.handleSubmit(onSubmit)}>
 						<Row>
-							<ImSearch color="#718096" size={25} />
+							<ImSearch color="#718096" />
 							<Input
 								name="search"
 								placeholder="Pesquise aqui seu anime"
@@ -92,7 +93,7 @@ export default function _homePage() {
 				</div>
 			</SectionCards>
 			<NewsSection>
-				<div>
+				<div className="newsSection__title">
 					<h1>
 						Nossa <span>Newsletter</span>
 					</h1>
@@ -115,6 +116,7 @@ export default function _homePage() {
 					</Form>
 				</FormProvider>
 			</NewsSection>
+			<Footer />
 		</Container>
 	);
 }

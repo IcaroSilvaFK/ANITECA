@@ -2,6 +2,7 @@ import { useSession, signIn, signOut } from "next-auth/react";
 
 import { HiOutlinePlusSm } from "react-icons/hi";
 import { IoIosSend } from "react-icons/io";
+import { BiSearchAlt2 } from "react-icons/bi";
 
 import {
 	ButtonLog,
@@ -10,6 +11,7 @@ import {
 	SearchButton,
 	ButButton,
 	SendButton,
+	ForgetButton,
 } from "./styles";
 
 export function ButtonLogin() {
@@ -54,5 +56,13 @@ export function ButtonSend() {
 		<SendButton type="submit">
 			Enviar <IoIosSend size={20} />
 		</SendButton>
+	);
+}
+
+export function ButtonForget() {
+	return (
+		<ForgetButton>
+			<BiSearchAlt2 color="#fff" size={20} />
+		</ForgetButton>
 	);
 }

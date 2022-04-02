@@ -9,10 +9,17 @@ export const Container = styled.header`
 
 	padding: 20px 80px;
 
-	/* border-bottom: 1px solid #fff; */
+	@media (max-width: 500px) {
+		padding: 10px 5px 10px 10px;
+	}
 `;
 
 export const Box = styled.div`
 	display: flex;
+	align-items: center;
 	gap: 60px;
+
+	@media (max-width: 500px) {
+		display: none;
+	}
 `;

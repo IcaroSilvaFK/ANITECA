@@ -18,5 +18,9 @@ export const Container = styled.nav`
 				}
 			}
 		}
+
+		@media (max-width: 500px) {
+			flex-direction: column;
+		}
 	}
 `;
