@@ -1,26 +1,17 @@
-import Link from "next/link";
-import { Container } from "./styles";
+import { Logo } from "../Logo";
+import { Navigation } from "../Navigation";
+import { ButtonLogin } from "../Buttons";
+
+import { Container, Box } from "./styles";
 
 export function Header() {
 	return (
 		<Container>
-			<ul>
-				<li>
-					<Link href="">
-						<a>Anime</a>
-					</Link>
-				</li>
-				<li>
-					<Link href="">
-						<a>Gêneros</a>
-					</Link>
-				</li>
-				<li>
-					<Link href="">
-						<a>Discord</a>
-					</Link>
-				</li>
-			</ul>
+			<Logo />
+			<Box>
+				<Navigation />
+				<ButtonLogin />
+			</Box>
 		</Container>
 	);
 }

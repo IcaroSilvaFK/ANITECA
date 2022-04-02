@@ -11,14 +11,14 @@ export function ButtonLogin() {
 		return (
 			<ButtonLogged onClick={() => signOut("google")}>
 				<img src={session.user.image} alt={session.user.name} />
-				<strong>{session.user.name}</strong>
+				<span>{session.user.name}</span>
 				<CloseIcon size={20} color="#fff" />
 			</ButtonLogged>
 		);
 	}
 	return (
 		<ButtonLog onClick={() => signIn("google")}>
-			<strong>login</strong>
+			<span>login</span>
 		</ButtonLog>
 	);
 }

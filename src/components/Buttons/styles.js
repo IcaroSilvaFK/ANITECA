@@ -2,6 +2,12 @@ import styled from "styled-components";
 import { MdClose } from "react-icons/md";
 
 export const ButtonLog = styled.button`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	height: 35px;
+
 	background-color: var(--red600);
 
 	padding: 8px 15px;
@@ -30,12 +36,15 @@ export const ButtonLogged = styled.button`
 	border-bottom-right-radius: 10px;
 	border-top-right-radius: 10px;
 
+	height: 30px;
+
 	img {
 		width: 40px;
 		border-radius: 50px;
 		position: absolute;
 
 		left: -28px;
+		border: 1px solid #fff;
 	}
 
 	transform: scale 0.3s;
