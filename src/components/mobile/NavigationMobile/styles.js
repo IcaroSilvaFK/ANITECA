@@ -14,43 +14,35 @@ export const Container = styled.div`
 export const Box = styled.div`
 	height: 100%;
 	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
 `;
 
 export const NavigationContainer = styled.nav`
-	position: relative;
+	position: absolute;
 
-	width: 80%;
-	height: 60%;
+	top: 0;
+	bottom: 0;
+	right: 0;
 
-	background-color: #212121;
+	width: 250px;
 
-	border-radius: 10px;
+	background-color: var(--red600);
 
 	display: flex;
-	align-items: center;
-	justify-content: center;
 	flex-direction: column;
-
+	align-items: center;
 	gap: 20px;
 
 	font-size: 18px;
 `;
 
 export const Close = styled.button`
-	position: absolute;
-
-	top: -10px;
-	right: -10px;
-
 	height: 40px;
-	width: 40px;
-	border-radius: 50%;
+	width: 100%;
 	background-color: var(--red600);
 
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: right;
+
+	padding: 10px;
 `;

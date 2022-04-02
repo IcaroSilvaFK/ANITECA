@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { CgSearch } from "react-icons/cg";
 
 export const Container = styled.header`
 	width: 100%;
@@ -23,3 +24,21 @@ export const Box = styled.div`
 		display: none;
 	}
 `;
+
+export const ContainerResponsive = styled.div`
+	display: none;
+
+	@media (max-width: 500px) {
+		display: flex;
+		align-items: center;
+		gap: 20px;
+
+		margin-right: 10px;
+	}
+`;
+
+export const Search = styled(CgSearch)`
+	font-size: 20px;
+`;
+
+export const ResponsiveLogo = styled.div``;

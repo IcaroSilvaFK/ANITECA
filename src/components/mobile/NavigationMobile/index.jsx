@@ -10,11 +10,11 @@ import { Box, Container, NavigationContainer, Close } from "./styles";
 export function NavigationModal() {
 	const { isOpenModal, handleCloseModal } = useModalMobile();
 	return (
-		<Container isAcitive={isOpenModal}>
+		<Container isAcitive={isOpenModal} onClick={handleCloseModal}>
 			<Box>
-				<NavigationContainer onClick={handleCloseModal}>
+				<NavigationContainer onClick={(e) => e.stopPropagation()}>
 					<Close>
-						<RiCloseFill size={20} />
+						<RiCloseFill size={40} />
 					</Close>
 					<ButtonLogin />
 					<Navigation />

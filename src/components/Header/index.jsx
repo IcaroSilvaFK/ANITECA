@@ -1,10 +1,18 @@
+import { useRef, useEffect } from "react";
+
 import { Logo } from "../Logo";
 import { Navigation } from "../Navigation";
 import { ButtonLogin } from "../Buttons";
 import { FormSearchHeader } from "../SearchHeader";
 
-import { Container, Box } from "./styles";
-
+import {
+	Container,
+	Box,
+	Search,
+	ContainerResponsive,
+	ResponsiveLogo,
+} from "./styles";
+import { useSearchMenu } from "../../context/searchMobile";
 import { MenuBurguer } from "../MenuBurguer";
 
 export function Header() {
@@ -21,16 +29,22 @@ export function Header() {
 }
 
 export function HeaderPrincipal() {
+	const { handleOpenSearch } = useSearchMenu();
+	const inputRef = useRef();
+
 	return (
 		<Container>
-			<Box>
+			<ResponsiveLogo>
 				<Logo />
-				<FormSearchHeader />
-			</Box>
+			</ResponsiveLogo>
 			<Box>
 				<Navigation />
 				<ButtonLogin />
 			</Box>
+			<ContainerResponsive ref={inputRef} id="seila">
+				<Search onClick={handleOpenSearch} />
+				<MenuBurguer />
+			</ContainerResponsive>
 		</Container>
 	);
 }
