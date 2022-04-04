@@ -70,3 +70,18 @@ export const Box = styled.div`
 `;
 
 export const Title = styled.h2``;
+
+export const ContainerButton = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+
+	button {
+		background-color: var(--red600);
+
+		width: 70px;
+		height: 40px;
+
+		border-radius: 10px;
+	}
+`;

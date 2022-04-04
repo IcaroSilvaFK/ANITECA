@@ -29,6 +29,18 @@ export const GlobalStyle = createGlobalStyle`
 		height: 100vh;
 		background-color:var(--gray900);
 		color: #FFFFFF;
+
+		&::-webkit-scrollbar{
+			background-color: transparent;
+
+			width: 10px;
+		}
+
+		&::-webkit-scrollbar-thumb{
+			background-color: var(--red600);
+
+			border-radius: 10px;
+		}
 	}	
 
 	body,a,input,button{

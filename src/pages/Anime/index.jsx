@@ -6,6 +6,7 @@ import { Input } from "../../components/Input";
 import { Header } from "../../components/Header";
 import { ButtonSearch } from "../../components/Buttons";
 import { CardAnime } from "../../components/Cards";
+import { Footer } from "../../components/Footer";
 
 import {
 	Container,
@@ -14,6 +15,7 @@ import {
 	Row,
 	ContainerSectionCards,
 	Title,
+	ContainerButton,
 } from "./styles";
 export default function _animePage() {
 	const props = useForm({
@@ -80,7 +82,99 @@ export default function _animePage() {
 						name="Seila"
 					/>
 				</Box>
+				<ContainerButton>
+					<button>Mais</button>
+				</ContainerButton>
 			</ContainerSectionCards>
+			<ContainerSectionCards>
+				<Title>Romance :</Title>
+				<Box>
+					<CardAnime
+						backgroundImage="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2018%2F09%2F26%2F173266-anime_girls-original_characters-snow.jpg&f=1&nofb=1"
+						name="Seila"
+					/>
+					<CardAnime
+						backgroundImage="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2018%2F09%2F26%2F173266-anime_girls-original_characters-snow.jpg&f=1&nofb=1"
+						name="Seila"
+					/>
+					<CardAnime
+						backgroundImage="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2018%2F09%2F26%2F173266-anime_girls-original_characters-snow.jpg&f=1&nofb=1"
+						name="Seila"
+					/>
+					<CardAnime
+						backgroundImage="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2018%2F09%2F26%2F173266-anime_girls-original_characters-snow.jpg&f=1&nofb=1"
+						name="Seila"
+					/>
+					<CardAnime
+						backgroundImage="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2018%2F09%2F26%2F173266-anime_girls-original_characters-snow.jpg&f=1&nofb=1"
+						name="Seila"
+					/>
+					<CardAnime
+						backgroundImage="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2018%2F09%2F26%2F173266-anime_girls-original_characters-snow.jpg&f=1&nofb=1"
+						name="Seila"
+					/>
+					<CardAnime
+						backgroundImage="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2018%2F09%2F26%2F173266-anime_girls-original_characters-snow.jpg&f=1&nofb=1"
+						name="Seila"
+					/>
+					<CardAnime
+						backgroundImage="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2018%2F09%2F26%2F173266-anime_girls-original_characters-snow.jpg&f=1&nofb=1"
+						name="Seila"
+					/>
+					<CardAnime
+						backgroundImage="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2018%2F09%2F26%2F173266-anime_girls-original_characters-snow.jpg&f=1&nofb=1"
+						name="Seila"
+					/>
+				</Box>
+				<ContainerButton>
+					<button>Mais</button>
+				</ContainerButton>
+			</ContainerSectionCards>
+			<ContainerSectionCards>
+				<Title>Ação :</Title>
+				<Box>
+					<CardAnime
+						backgroundImage="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2018%2F09%2F26%2F173266-anime_girls-original_characters-snow.jpg&f=1&nofb=1"
+						name="Seila"
+					/>
+					<CardAnime
+						backgroundImage="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2018%2F09%2F26%2F173266-anime_girls-original_characters-snow.jpg&f=1&nofb=1"
+						name="Seila"
+					/>
+					<CardAnime
+						backgroundImage="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2018%2F09%2F26%2F173266-anime_girls-original_characters-snow.jpg&f=1&nofb=1"
+						name="Seila"
+					/>
+					<CardAnime
+						backgroundImage="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2018%2F09%2F26%2F173266-anime_girls-original_characters-snow.jpg&f=1&nofb=1"
+						name="Seila"
+					/>
+					<CardAnime
+						backgroundImage="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2018%2F09%2F26%2F173266-anime_girls-original_characters-snow.jpg&f=1&nofb=1"
+						name="Seila"
+					/>
+					<CardAnime
+						backgroundImage="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2018%2F09%2F26%2F173266-anime_girls-original_characters-snow.jpg&f=1&nofb=1"
+						name="Seila"
+					/>
+					<CardAnime
+						backgroundImage="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2018%2F09%2F26%2F173266-anime_girls-original_characters-snow.jpg&f=1&nofb=1"
+						name="Seila"
+					/>
+					<CardAnime
+						backgroundImage="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2018%2F09%2F26%2F173266-anime_girls-original_characters-snow.jpg&f=1&nofb=1"
+						name="Seila"
+					/>
+					<CardAnime
+						backgroundImage="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2018%2F09%2F26%2F173266-anime_girls-original_characters-snow.jpg&f=1&nofb=1"
+						name="Seila"
+					/>
+				</Box>
+				<ContainerButton>
+					<button>Mais</button>
+				</ContainerButton>
+			</ContainerSectionCards>
+			<Footer />
 		</Container>
 	);
 }
