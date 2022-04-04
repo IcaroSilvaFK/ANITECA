@@ -1,13 +1,15 @@
-import { GrCircleAlert } from "react-icons/gr";
+import { AiOutlineExclamationCircle } from "react-icons/ai";
 
 import { Container, Box } from "./styles";
 
 export function CardAnime({ name, backgroundImage }) {
 	return (
-		<Box imageBackground={backgroundImage}>
-			<strong>{name}</strong>
-			<GrCircleAlert />
-		</Box>
+		<Container imageBackground={backgroundImage}>
+			<Box>
+				<strong>{name}</strong>
+				<AiOutlineExclamationCircle color="#fff" size={20} />
+			</Box>
+		</Container>
 	);
 }
 

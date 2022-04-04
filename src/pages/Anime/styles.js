@@ -35,11 +35,38 @@ export const Row = styled.div`
 	}
 `;
 
-export const ContainerSectionCards = styled.section``;
+export const ContainerSectionCards = styled.section`
+	max-width: 1200px;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+
+	gap: 20px;
+
+	margin-top: 30px;
+`;
 
 export const Box = styled.div`
+	width: 100%;
 	overflow-x: auto;
+
+	padding: 5px;
+
+	display: flex;
+	justify-content: center;
+
+	gap: 20px;
+
 	&::-webkit-scrollbar {
-		display: none;
+		background-color: transparent;
+
+		height: 8px;
+	}
+	&::-webkit-scrollbar-thumb {
+		background-color: var(--red600);
+
+		border-radius: 10px;
 	}
 `;
+
+export const Title = styled.h2``;
