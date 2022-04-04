@@ -41,4 +41,10 @@ export const Search = styled(CgSearch)`
 	font-size: 20px;
 `;
 
-export const ResponsiveLogo = styled.div``;
+export const ResponsiveLogo = styled.div`
+	display: none;
+
+	@media (max-width: 500) {
+		display: flex;
+	}
+`;

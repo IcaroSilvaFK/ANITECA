@@ -81,7 +81,7 @@ export const Row = styled.div`
 	input {
 		background-color: transparent;
 
-		width: 350px;
+		width: 550px;
 		height: 30px;
 
 		font-size: 18px;

@@ -37,7 +37,7 @@ export const NavigationContainer = styled.nav`
 
 export const Close = styled.button`
 	height: 40px;
-	width: 100%;
+
 	background-color: var(--red600);
 
 	display: flex;
@@ -45,4 +45,6 @@ export const Close = styled.button`
 	justify-content: right;
 
 	padding: 10px;
+
+	align-self: flex-end;
 `;

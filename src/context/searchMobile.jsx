@@ -7,12 +7,10 @@ export function SearchMobileContextProvider({ children }) {
 
 	function handleOpenSearch() {
 		setIsOpenSearch(true);
-		console.log("s");
 	}
 
 	function handleCloseSearch(e) {
 		setIsOpenSearch(false);
-		console.log(e.stopPropagation);
 	}
 
 	return (

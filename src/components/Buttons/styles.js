@@ -53,6 +53,9 @@ export const ButtonLogged = styled.button`
 	&:hover {
 		transform: scale(1.1);
 	}
+
+	@media (max-width: 500px) {
+	}
 `;
 
 export const CloseIcon = styled(MdClose)`

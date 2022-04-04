@@ -9,6 +9,9 @@ import { Input } from "../components/Input";
 import { ButtonSearch, ButtonBut, ButtonSend } from "../components/Buttons";
 import { Footer } from "../components/Footer";
 
+import { useQuery } from "@apollo/client";
+import { GET_ALL_ANIMES } from "../services/querys.gql";
+
 import {
 	Container,
 	Box,
@@ -20,6 +23,8 @@ import {
 } from "./styles/home.style";
 
 export default function _homePage() {
+	// const { loading, error, data } = useQuery(GET_ALL_ANIMES);
+
 	const props = useForm({
 		defaultValues: {
 			search: "",
@@ -38,6 +43,8 @@ export default function _homePage() {
 
 		props.reset();
 	}
+
+	// console.log(data);
 	return (
 		<Container>
 			<Header />

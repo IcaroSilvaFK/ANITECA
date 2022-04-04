@@ -13,7 +13,7 @@ export function NavigationModal() {
 		<Container isAcitive={isOpenModal} onClick={handleCloseModal}>
 			<Box>
 				<NavigationContainer onClick={(e) => e.stopPropagation()}>
-					<Close>
+					<Close onClick={handleCloseModal}>
 						<RiCloseFill size={40} />
 					</Close>
 					<ButtonLogin />

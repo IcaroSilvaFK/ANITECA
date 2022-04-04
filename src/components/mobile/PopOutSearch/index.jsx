@@ -20,6 +20,7 @@ export function PopOutSearch() {
 		console.log(data);
 
 		props.reset();
+		handleCloseSearch();
 	}
 
 	useEffect(() => {

@@ -1,5 +1,3 @@
-import { useRef, useEffect } from "react";
-
 import { Logo } from "../Logo";
 import { Navigation } from "../Navigation";
 import { ButtonLogin } from "../Buttons";
@@ -30,18 +28,22 @@ export function Header() {
 
 export function HeaderPrincipal() {
 	const { handleOpenSearch } = useSearchMenu();
-	const inputRef = useRef();
 
 	return (
 		<Container>
+			<Box>
+				<Logo />
+				<FormSearchHeader />
+			</Box>
 			<ResponsiveLogo>
 				<Logo />
+				<FormSearchHeader />
 			</ResponsiveLogo>
 			<Box>
 				<Navigation />
 				<ButtonLogin />
 			</Box>
-			<ContainerResponsive ref={inputRef} id="seila">
+			<ContainerResponsive>
 				<Search onClick={handleOpenSearch} />
 				<MenuBurguer />
 			</ContainerResponsive>
