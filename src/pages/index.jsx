@@ -2,15 +2,14 @@ import Image from "next/image";
 import { FormProvider, useForm } from "react-hook-form";
 
 import { ImSearch } from "react-icons/im";
-import { MdOutlineAlternateEmail } from "react-icons/md";
+import { MdEmojiEvents, MdOutlineAlternateEmail } from "react-icons/md";
 
 import { Header } from "../components/Header";
 import { Input } from "../components/Input";
 import { ButtonSearch, ButtonBut, ButtonSend } from "../components/Buttons";
 import { Footer } from "../components/Footer";
 
-import { useQuery } from "@apollo/client";
-import { GET_ALL_ANIMES } from "../services/querys.gql";
+import { useQuery, gql } from "@apollo/client";
 
 import {
 	Container,
@@ -22,8 +21,18 @@ import {
 	NewsSection,
 } from "./styles/home.style";
 
+const ImageQuery = gql`
+	query {
+		animes(limit: 3) {
+			imageUrl
+			id
+		}
+	}
+`;
+
 export default function _homePage() {
 	// const { loading, error, data } = useQuery(GET_ALL_ANIMES);
+	const { data } = useQuery(ImageQuery);
 
 	const props = useForm({
 		defaultValues: {
@@ -43,6 +52,8 @@ export default function _homePage() {
 
 		props.reset();
 	}
+
+	console.log(data);
 
 	return (
 		<Container>
@@ -81,18 +92,9 @@ export default function _homePage() {
 					<h2>Animes mais vistos</h2>
 				</div>
 				<CardsSection>
-					<img
-						src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fptanime.com%2Fwp-content%2Fuploads%2F2019%2F10%2FNaruto-Manga-Volume-66-artigo-capa-revelada-ptAnime.jpg&f=1&nofb=1"
-						alt=""
-					/>
-					<img
-						src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.redd.it%2Fja3faz6jsrn31.jpg&f=1&nofb=1"
-						alt=""
-					/>
-					<img
-						src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2Ff8%2Ffe%2F60%2Ff8fe60874cac2b5ee26806aba11fd6cc.jpg&f=1&nofb=1"
-						alt=""
-					/>
+					{data?.animes.map((element) => (
+						<img src={element.imageUrl} alt="" key={element.id} />
+					))}
 				</CardsSection>
 				<div className="containerBut">
 					<ButtonBut />
@@ -104,7 +106,7 @@ export default function _homePage() {
 						Nossa <span>Newsletter</span>
 					</h1>
 					<p>
-						Participe da nossa newsletter para receber noosa atualização semanal
+						Participe da nossa newsletter para receber nossa atualização semanal
 						de novos animes!
 					</p>
 				</div>

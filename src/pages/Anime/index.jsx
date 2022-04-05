@@ -1,4 +1,5 @@
 import { useForm, FormProvider } from "react-hook-form";
+import { useQuery, gql } from "@apollo/client";
 
 import { FiSearch } from "react-icons/fi";
 
@@ -17,12 +18,52 @@ import {
 	Title,
 	SectionButton,
 } from "./styles";
+
+const GET_ANIME_FANTASY = gql`
+	query {
+		animes(genres: "fantasy", limit: 10) {
+			imageUrl
+			title
+			id
+			genres
+		}
+	}
+`;
+
+const GET_ANIME_ACTION = gql`
+	query {
+		animes(genres: "action", limit: 10) {
+			imageUrl
+			title
+			id
+			genres
+		}
+	}
+`;
+
+const GET_ANIME_ROMANCE = gql`
+	query {
+		animes(genres: "action", limit: 10) {
+			imageUrl
+			title
+			id
+			genres
+		}
+	}
+`;
+
 export default function _animePage() {
+	const { data: fantasy } = useQuery(GET_ANIME_FANTASY);
+	const { data: action } = useQuery(GET_ANIME_ACTION);
+	const { data: romance } = useQuery(GET_ANIME_ROMANCE);
+
 	const props = useForm({
 		defaultValues: {
 			search: "",
 		},
 	});
+
+	console.log(romance?.animes);
 
 	function onSubmit(data) {}
 
@@ -45,94 +86,43 @@ export default function _animePage() {
 			<ContainerSectionCards>
 				<Title>Romance :</Title>
 				<Box>
-					<CardAnime
-						backgroundImage="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2F736x%2F24%2F9b%2F1f%2F249b1f13aea8e3cded45831a0df12600--romance-anime-romances.jpg&f=1&nofb=1"
-						name="seila"
-					/>
-					<CardAnime
-						backgroundImage="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2F736x%2F24%2F9b%2F1f%2F249b1f13aea8e3cded45831a0df12600--romance-anime-romances.jpg&f=1&nofb=1"
-						name="seila"
-					/>
-					<CardAnime
-						backgroundImage="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2F736x%2F24%2F9b%2F1f%2F249b1f13aea8e3cded45831a0df12600--romance-anime-romances.jpg&f=1&nofb=1"
-						name="seila"
-					/>
-					<CardAnime
-						backgroundImage="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2F736x%2F24%2F9b%2F1f%2F249b1f13aea8e3cded45831a0df12600--romance-anime-romances.jpg&f=1&nofb=1"
-						name="seila"
-					/>
-					<CardAnime
-						backgroundImage="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2F736x%2F24%2F9b%2F1f%2F249b1f13aea8e3cded45831a0df12600--romance-anime-romances.jpg&f=1&nofb=1"
-						name="seila"
-					/>
-					<CardAnime
-						backgroundImage="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2F736x%2F24%2F9b%2F1f%2F249b1f13aea8e3cded45831a0df12600--romance-anime-romances.jpg&f=1&nofb=1"
-						name="seila"
-					/>
+					{romance?.animes.map((element) => (
+						<CardAnime
+							key={element.id}
+							backgroundImage={element.imageUrl}
+							name={element.title}
+						/>
+					))}
 				</Box>
 				<SectionButton>
 					<button>Mais</button>
 				</SectionButton>
 			</ContainerSectionCards>
 			<ContainerSectionCards>
-				<Title>Seila :</Title>
+				<Title>Action :</Title>
 				<Box>
-					<CardAnime
-						backgroundImage="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2F736x%2F24%2F9b%2F1f%2F249b1f13aea8e3cded45831a0df12600--romance-anime-romances.jpg&f=1&nofb=1"
-						name="seila"
-					/>
-					<CardAnime
-						backgroundImage="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2F736x%2F24%2F9b%2F1f%2F249b1f13aea8e3cded45831a0df12600--romance-anime-romances.jpg&f=1&nofb=1"
-						name="seila"
-					/>
-					<CardAnime
-						backgroundImage="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2F736x%2F24%2F9b%2F1f%2F249b1f13aea8e3cded45831a0df12600--romance-anime-romances.jpg&f=1&nofb=1"
-						name="seila"
-					/>
-					<CardAnime
-						backgroundImage="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2F736x%2F24%2F9b%2F1f%2F249b1f13aea8e3cded45831a0df12600--romance-anime-romances.jpg&f=1&nofb=1"
-						name="seila"
-					/>
-					<CardAnime
-						backgroundImage="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2F736x%2F24%2F9b%2F1f%2F249b1f13aea8e3cded45831a0df12600--romance-anime-romances.jpg&f=1&nofb=1"
-						name="seila"
-					/>
-					<CardAnime
-						backgroundImage="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2F736x%2F24%2F9b%2F1f%2F249b1f13aea8e3cded45831a0df12600--romance-anime-romances.jpg&f=1&nofb=1"
-						name="seila"
-					/>
+					{action?.animes.map((element) => (
+						<CardAnime
+							key={element.id}
+							backgroundImage={element.imageUrl}
+							name={element.title}
+						/>
+					))}
 				</Box>
 				<SectionButton>
 					<button>Mais</button>
 				</SectionButton>
 			</ContainerSectionCards>
 			<ContainerSectionCards>
-				<Title>Ação :</Title>
+				<Title>Fantasy :</Title>
 				<Box>
-					<CardAnime
-						backgroundImage="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2F736x%2F24%2F9b%2F1f%2F249b1f13aea8e3cded45831a0df12600--romance-anime-romances.jpg&f=1&nofb=1"
-						name="Lorem lorem lorem lorem"
-					/>
-					<CardAnime
-						backgroundImage="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2F736x%2F24%2F9b%2F1f%2F249b1f13aea8e3cded45831a0df12600--romance-anime-romances.jpg&f=1&nofb=1"
-						name="seila"
-					/>
-					<CardAnime
-						backgroundImage="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2F736x%2F24%2F9b%2F1f%2F249b1f13aea8e3cded45831a0df12600--romance-anime-romances.jpg&f=1&nofb=1"
-						name="seila"
-					/>
-					<CardAnime
-						backgroundImage="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2F736x%2F24%2F9b%2F1f%2F249b1f13aea8e3cded45831a0df12600--romance-anime-romances.jpg&f=1&nofb=1"
-						name="seila"
-					/>
-					<CardAnime
-						backgroundImage="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2F736x%2F24%2F9b%2F1f%2F249b1f13aea8e3cded45831a0df12600--romance-anime-romances.jpg&f=1&nofb=1"
-						name="seila"
-					/>
-					<CardAnime
-						backgroundImage="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2F736x%2F24%2F9b%2F1f%2F249b1f13aea8e3cded45831a0df12600--romance-anime-romances.jpg&f=1&nofb=1"
-						name="seila"
-					/>
+					{fantasy?.animes.map((element) => (
+						<CardAnime
+							key={element.id}
+							backgroundImage={element.imageUrl}
+							name={element.title}
+						/>
+					))}
 				</Box>
 				<SectionButton>
 					<button>Mais</button>

@@ -158,7 +158,7 @@ export const NewsSection = styled.div`
 
 	.newsSection__title {
 		text-align: center;
-
+		max-width: 1200px;
 		h1 {
 			font-size: 45px;
 			span {
@@ -167,7 +167,8 @@ export const NewsSection = styled.div`
 		}
 		p {
 			font-size: 22px;
-			width: 600px;
+			width: 70%;
+			margin: auto;
 		}
 	}
 
