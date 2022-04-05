@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-	h1 {
-		color: var(--red600);
+export const Container = styled.button`
+	display: flex;
+	align-items: center;
 
-		font-size: 26px;
-	}
+	color: #e53e3e;
+	font-size: 26px;
 `;

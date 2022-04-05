@@ -1,9 +1,7 @@
 import { Container } from "./styles";
-
+import { useRouter } from "next/router";
 export function Logo() {
-	return (
-		<Container>
-			<h1>ANITECA</h1>
-		</Container>
-	);
+	const router = useRouter();
+
+	return <Container onClick={() => router.push("/")}>ANITECA</Container>;
 }

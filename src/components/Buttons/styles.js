@@ -32,12 +32,12 @@ export const ButtonLogged = styled.button`
 
 	position: relative;
 
-	padding: 4px 4px 4px 14px;
+	padding: 8px 4px 8px 14px;
 
 	border-bottom-right-radius: 10px;
 	border-top-right-radius: 10px;
 
-	height: 30px;
+	height: 40px;
 
 	img {
 		width: 40px;
@@ -55,11 +55,56 @@ export const ButtonLogged = styled.button`
 	}
 
 	@media (max-width: 500px) {
+		align-items: center;
+
+		gap: 10px;
+		width: 100%;
+		border-radius: 0;
+		position: relative;
+		img {
+			width: 50px;
+			position: absolute;
+
+			left: -30px;
+			border: 0;
+			outline: 13px solid var(--red600);
+		}
+
+		font-size: 14px;
+	}
+`;
+export const Profile = styled.div`
+	display: flex;
+	align-items: center;
+	gap: 20px;
+`;
+
+export const Column = styled.div`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	span {
+		font-size: 12px;
+		filter: brightness(0.8);
+	}
+`;
+
+export const Row = styled.div`
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	.nameUser {
+		font-size: 14px;
+		color: #fff;
+		filter: brightness(1);
 	}
 `;
 
 export const CloseIcon = styled(MdClose)`
-	color: "#fff";
+	color: #fff;
 `;
 
 export const SearchButton = styled.button`

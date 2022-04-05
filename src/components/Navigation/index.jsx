@@ -1,13 +1,26 @@
 import Link from "next/link";
+import { useSession } from "next-auth/react";
 
-import { Container } from "./styles";
+import { Container, Button } from "./styles";
+import { useModal } from "../../context/modalDiscord";
 
 export function Navigation() {
+	const { data: session } = useSession();
+	const { toggleModal } = useModal();
+
 	return (
 		<Container>
 			<ul>
+				{!!session ? (
+					<li>
+						<Button quantity={10}>Favoritos</Button>
+					</li>
+				) : (
+					<></>
+				)}
+
 				<li>
-					<Link href="/">
+					<Link href="/Anime">
 						<a>Anime</a>
 					</Link>
 				</li>
@@ -17,9 +30,7 @@ export function Navigation() {
 					</Link>
 				</li>
 				<li>
-					<Link href="/">
-						<a>Discord</a>
-					</Link>
+					<Button onClick={toggleModal}>Discord</Button>
 				</li>
 			</ul>
 		</Container>

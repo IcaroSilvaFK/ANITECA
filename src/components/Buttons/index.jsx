@@ -12,6 +12,9 @@ import {
 	ButButton,
 	SendButton,
 	ForgetButton,
+	Profile,
+	Column,
+	Row,
 } from "./styles";
 
 export function ButtonLogin() {
@@ -21,10 +24,19 @@ export function ButtonLogin() {
 
 	if (session) {
 		return (
-			<ButtonLogged onClick={() => signOut("google")}>
+			<ButtonLogged onClick={() => signOut()}>
 				<img src={session.user.image} alt={session.user.name} />
-				<span>{session.user.name.split(" ")[0]}</span>
-				<CloseIcon size={20} color="#fff" />
+				<Profile>
+					<Column>
+						<Row>
+							<span className="nameUser">
+								{session.user.name.split(" ")[0]}
+							</span>
+							<CloseIcon size={20} color="#fff" />
+						</Row>
+						<span>{session.user.email}</span>
+					</Column>
+				</Profile>
 			</ButtonLogged>
 		);
 	}

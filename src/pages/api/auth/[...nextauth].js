@@ -1,6 +1,6 @@
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
-
+import { v4 as isUuid } from "uuid";
 export default NextAuth({
 	providers: [
 		GoogleProvider({
@@ -8,4 +8,19 @@ export default NextAuth({
 			clientSecret: process.env.CLIENT_SECRET,
 		}),
 	],
+	callbacks: {
+		async signIn({ user }) {
+			try {
+				return {
+					...user,
+					id: isUuid(),
+				};
+			} catch (error) {
+				return {
+					...user,
+					id: null,
+				};
+			}
+		},
+	},
 });

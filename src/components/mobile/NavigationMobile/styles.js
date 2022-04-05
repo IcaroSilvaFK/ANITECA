@@ -23,7 +23,7 @@ export const NavigationContainer = styled.nav`
 	bottom: 0;
 	right: 0;
 
-	width: 250px;
+	width: 200px;
 
 	background-color: var(--red600);
 

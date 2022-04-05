@@ -44,7 +44,6 @@ export default function _homePage() {
 		props.reset();
 	}
 
-	// console.log(data);
 	return (
 		<Container>
 			<Header />
