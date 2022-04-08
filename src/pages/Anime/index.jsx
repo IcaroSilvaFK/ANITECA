@@ -1,5 +1,6 @@
 import { useForm, FormProvider } from "react-hook-form";
 import { useQuery, gql } from "@apollo/client";
+import { useRouter } from "next/router";
 
 import { FiSearch } from "react-icons/fi";
 
@@ -20,7 +21,7 @@ import {
 } from "./styles";
 
 const GET_ANIME_FANTASY = gql`
-	query {
+	query animes {
 		animes(genres: "fantasy", limit: 10) {
 			imageUrl
 			title
@@ -31,7 +32,7 @@ const GET_ANIME_FANTASY = gql`
 `;
 
 const GET_ANIME_ACTION = gql`
-	query {
+	query animes {
 		animes(genres: "action", limit: 10) {
 			imageUrl
 			title
@@ -42,7 +43,7 @@ const GET_ANIME_ACTION = gql`
 `;
 
 const GET_ANIME_ROMANCE = gql`
-	query {
+	query animes {
 		animes(genres: "action", limit: 10) {
 			imageUrl
 			title
@@ -57,15 +58,24 @@ export default function _animePage() {
 	const { data: action } = useQuery(GET_ANIME_ACTION);
 	const { data: romance } = useQuery(GET_ANIME_ROMANCE);
 
+	const router = useRouter();
+
 	const props = useForm({
 		defaultValues: {
 			search: "",
 		},
 	});
 
-	console.log(romance?.animes);
+	function onSubmit(data) {
+		console.log(data);
+	}
 
-	function onSubmit(data) {}
+	function handlePreviewAnime(id) {
+		const pathNameTitleAnime = romance?.animes.filter(
+			(element) => element.id === id
+		);
+		router.push(`/animePage/${id}`);
+	}
 
 	return (
 		<Container>
@@ -91,6 +101,7 @@ export default function _animePage() {
 							key={element.id}
 							backgroundImage={element.imageUrl}
 							name={element.title}
+							previewAnime={() => handlePreviewAnime(element.id)}
 						/>
 					))}
 				</Box>

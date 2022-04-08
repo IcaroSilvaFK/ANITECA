@@ -26,7 +26,6 @@ export const ButtonLogged = styled.button`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	gap: 4px;
 
 	background-color: var(--red600);
 
@@ -58,16 +57,22 @@ export const ButtonLogged = styled.button`
 		align-items: center;
 
 		gap: 10px;
-		width: 100%;
+		width: 150%;
 		border-radius: 0;
 		position: relative;
+		background-color: #171923;
+		height: 80px;
+		border-bottom-left-radius: 100px;
+		border-top-left-radius: 100px;
+
+		box-shadow: 0 0 5px var(--red600);
+
 		img {
 			width: 50px;
 			position: absolute;
 
-			left: -30px;
+			left: 16px;
 			border: 0;
-			outline: 13px solid var(--red600);
 		}
 
 		font-size: 14px;
@@ -88,6 +93,13 @@ export const Column = styled.div`
 		font-size: 12px;
 		filter: brightness(0.8);
 	}
+	.email {
+		display: none;
+
+		@media (max-width: 500px) {
+			display: block;
+		}
+	}
 `;
 
 export const Row = styled.div`
@@ -95,11 +107,18 @@ export const Row = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	gap: 15px;
 
 	.nameUser {
 		font-size: 14px;
 		color: #fff;
 		filter: brightness(1);
+		margin-left: 5px;
+	}
+	@media (max-width: 500px) {
+		.nameUser {
+			margin-left: 0;
+		}
 	}
 `;
 

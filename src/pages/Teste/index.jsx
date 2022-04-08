@@ -1,11 +1,9 @@
-import { HeaderPrincipal } from "../../components/Header";
+import { CardGenres } from "../../components/CardGenres";
 
-import { Container } from "./styles";
-
-export default function pageTestComponents() {
-	return (
-		<Container>
-			<HeaderPrincipal />
-		</Container>
-	);
+export default function Teste() {
+  return (
+    <>
+      <CardGenres genre="Romance" />
+    </>
+  );
 }

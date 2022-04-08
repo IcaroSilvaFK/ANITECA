@@ -14,7 +14,7 @@ export function NavigationModal() {
 			<Box>
 				<NavigationContainer onClick={(e) => e.stopPropagation()}>
 					<Close onClick={handleCloseModal}>
-						<RiCloseFill size={40} />
+						<RiCloseFill size={30} />
 					</Close>
 					<ButtonLogin />
 					<Navigation />

@@ -141,6 +141,7 @@ export const CardsSection = styled.div`
 		width: 300px;
 		height: 370px;
 		border-radius: 5px;
+		cursor: pointer;
 	}
 
 	@media (max-width: 500px) {

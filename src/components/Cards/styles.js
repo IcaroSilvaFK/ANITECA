@@ -14,6 +14,14 @@ export const Container = styled.div`
 
 	display: flex;
 	align-items: flex-start;
+
+	@media (max-width: 500px) {
+		min-width: 150px;
+		max-width: 150px;
+		height: 200px;
+
+		background-position: center;
+	}
 `;
 
 export const Box = styled.div`
@@ -29,5 +37,16 @@ export const Box = styled.div`
 		max-width: 180px;
 		height: 30px;
 		overflow: hidden;
+	}
+
+	@media (max-width: 500px) {
+		text-align: center;
+
+		svg {
+			display: none;
+		}
+		strong {
+			width: 100%;
+		}
 	}
 `;

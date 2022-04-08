@@ -28,10 +28,15 @@ export const Box = styled.div`
 
 	input {
 		background-color: transparent;
-		width: 220px;
+		width: 450px;
 		height: 30px;
 		padding: 0 16px;
 		font-size: 16px;
+	}
+	@media (max-width: 500px) {
+		input {
+			width: 220px;
+		}
 	}
 `;
 

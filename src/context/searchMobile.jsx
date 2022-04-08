@@ -1,4 +1,4 @@
-import { createContext, useState, useContext } from "react";
+import { createContext, useState, useContext, useEffect } from "react";
 
 const SearchMobileContext = createContext({});
 
@@ -6,12 +6,18 @@ export function SearchMobileContextProvider({ children }) {
 	const [isOpenSearch, setIsOpenSearch] = useState(false);
 
 	function handleOpenSearch() {
-		setIsOpenSearch(true);
+		setIsOpenSearch((prev) => !prev);
 	}
 
-	function handleCloseSearch(e) {
-		setIsOpenSearch(false);
+	function handleCloseSearch() {
+		setIsOpenSearch((prev) => !prev);
 	}
+
+	useEffect(() => {
+		window.addEventListener("keydown", (e) => {
+			if (e.key === "Escape") setIsOpenSearch(false);
+		});
+	}, []);
 
 	return (
 		<SearchMobileContext.Provider

@@ -25,7 +25,9 @@ export const NavigationContainer = styled.nav`
 
 	width: 200px;
 
-	background-color: var(--red600);
+	background-color: #171923;
+
+	box-shadow: -3px 0 5px var(--red600);
 
 	display: flex;
 	flex-direction: column;
@@ -37,14 +39,18 @@ export const NavigationContainer = styled.nav`
 
 export const Close = styled.button`
 	height: 40px;
-
+	width: 50px;
 	background-color: var(--red600);
 
-	display: flex;
-	align-items: center;
-	justify-content: right;
+	border-bottom-left-radius: 100px;
 
-	padding: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
 	align-self: flex-end;
+
+	svg {
+		margin-left: 10px;
+	}
 `;

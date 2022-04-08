@@ -1,13 +1,13 @@
+import { useEffect } from "react";
 import { useSession, signIn, signOut } from "next-auth/react";
 
 import { HiOutlinePlusSm } from "react-icons/hi";
 import { IoIosSend } from "react-icons/io";
 import { BiSearchAlt2 } from "react-icons/bi";
-
+import { IoExitOutline } from "react-icons/io5";
 import {
 	ButtonLog,
 	ButtonLogged,
-	CloseIcon,
 	SearchButton,
 	ButButton,
 	SendButton,
@@ -18,30 +18,34 @@ import {
 } from "./styles";
 
 export function ButtonLogin() {
-	const { data: session } = useSession();
+	const { data: session, status } = useSession();
 
-	console.log(session);
+	function handleAddNewUSer() {
+		signIn("google");
+	}
 
 	if (session) {
+		// createUser({ variables: { email: session?.user.email } });
+
 		return (
 			<ButtonLogged onClick={() => signOut()}>
-				<img src={session.user.image} alt={session.user.name} />
+				<img src={session?.user.image} alt={session?.user.name} />
 				<Profile>
 					<Column>
 						<Row>
 							<span className="nameUser">
-								{session.user.name.split(" ")[0]}
+								{session?.user.name.split(" ")[0]}
 							</span>
-							<CloseIcon size={20} color="#fff" />
+							<IoExitOutline size={20} color="#fff" />
 						</Row>
-						<span>{session.user.email}</span>
+						<span className="email">{session?.user.email}</span>
 					</Column>
 				</Profile>
 			</ButtonLogged>
 		);
 	}
 	return (
-		<ButtonLog onClick={() => signIn("google")}>
+		<ButtonLog onClick={handleAddNewUSer}>
 			<span>login</span>
 		</ButtonLog>
 	);
@@ -55,9 +59,9 @@ export function ButtonSearch({ color }) {
 	);
 }
 
-export function ButtonBut() {
+export function ButtonBut({ onClick }) {
 	return (
-		<ButButton>
+		<ButButton onClick={onClick}>
 			Mais <HiOutlinePlusSm size={20} />
 		</ButButton>
 	);
